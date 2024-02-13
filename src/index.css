@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Permanent+Marker&display=swap");
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(22, 30, 49);
+  color: white;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
