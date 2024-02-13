@@ -156,54 +156,56 @@ export const getProjects = async () => {
 
 const getProjectByName = async (projectName) => {
     const projects = await getProjects();
-    
+
     return projects.find(project => project.name === projectName);
 }
 
-const ZenPods = await getProjectByName('ZenPods')
-const Blockchain = await getProjectByName('Blockchain')
-const BasicMicroserviceECommerce = await getProjectByName('Basic-Microservice-E-Commerce')
-const Authentication = await getProjectByName('Authentication')
-const Crypto = await getProjectByName('Crypto-Website-Project')
-const MovieApp = await getProjectByName("MovieApp-Token-Cache-Redis")
+export const getProjectsArray = async () => {
+    const ZenPods = await getProjectByName('ZenPods')
+    const Blockchain = await getProjectByName('Blockchain')
+    const BasicMicroserviceECommerce = await getProjectByName('Basic-Microservice-E-Commerce')
+    const Authentication = await getProjectByName('Authentication')
+    const Crypto = await getProjectByName('Crypto-Website-Project')
+    const MovieApp = await getProjectByName("MovieApp-Token-Cache-Redis")
 
-export const projects = [
-    {
-        id: BasicMicroserviceECommerce?.id,
-        project_detail: BasicMicroserviceECommerce,
-        project_image: dockerSS
-    },
-    {
-        id: ZenPods.id,
-        project_detail: ZenPods,
-        project_image: zenpods
-    },
-    {
-        id: Blockchain.id,
-        project_detail: Blockchain,
-        project_image: blockchain
-    },
-    {
-        id: Authentication.id,
-        project_detail: Authentication,
-        project_image: authentication
-    },
-    {
-        id: Crypto.id,
-        project_detail: Crypto,
-        project_image: crypto
-    },
-    {
-        id: MovieApp.id,
-        project_detail: MovieApp,
-        project_image: tcr
-    },
-]
+    return [
+        {
+            id: BasicMicroserviceECommerce?.id,
+            project_detail: BasicMicroserviceECommerce,
+            project_image: dockerSS
+        },
+        {
+            id: ZenPods.id,
+            project_detail: ZenPods,
+            project_image: zenpods
+        },
+        {
+            id: Blockchain.id,
+            project_detail: Blockchain,
+            project_image: blockchain
+        },
+        {
+            id: Authentication.id,
+            project_detail: Authentication,
+            project_image: authentication
+        },
+        {
+            id: Crypto.id,
+            project_detail: Crypto,
+            project_image: crypto
+        },
+        {
+            id: MovieApp.id,
+            project_detail: MovieApp,
+            project_image: tcr
+        },
+    ]
+}
 
-const getQuotes = async() => {
+const getQuotes = async () => {
     const response = await axios.get('https://api.api-ninjas.com/v1/quotes?category=hope', {
         headers: {
-            'X-Api-Key':'HyAi9cOs9KdD+XlnNi9DNw==jKk4XwPNmqlWRihu'
+            'X-Api-Key': 'HyAi9cOs9KdD+XlnNi9DNw==jKk4XwPNmqlWRihu'
         }
     });
 

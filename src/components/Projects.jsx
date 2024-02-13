@@ -1,7 +1,17 @@
 import { FaStar } from "react-icons/fa"
-import { projects } from "../constans"
+import { getProjectsArray } from "../constans"
+import { useEffect, useState } from "react"
 
 const Projects = () => {
+  const [projects, setProjects] = useState([])
+  useEffect(() => {
+    const getProjects = async() => {
+      const response = await getProjectsArray();
+      setProjects(response)
+    }
+
+    getProjects();
+  },[])
   return (
     <div id="projects" className="w-full flex flex-col justify-start items-start mt-20">
       <h1 className="text-two font-bold tracking-widest font-nunito"> Projects </h1>
