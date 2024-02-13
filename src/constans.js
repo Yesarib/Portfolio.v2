@@ -202,7 +202,7 @@ export const getProjectsArray = async () => {
     ]
 }
 
-const getQuotes = async () => {
+export const getQuotes = async () => {
     const response = await axios.get('https://api.api-ninjas.com/v1/quotes?category=hope', {
         headers: {
             'X-Api-Key': 'HyAi9cOs9KdD+XlnNi9DNw==jKk4XwPNmqlWRihu'
@@ -212,8 +212,8 @@ const getQuotes = async () => {
     return response.data;
 }
 
-const quote = await getQuotes();
+// const quote = await getQuotes();
 
-export const quates = {
-    quote: quote
-}
+// export const quates = {
+//     quote: quote
+// }
