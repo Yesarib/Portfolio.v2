@@ -15,11 +15,10 @@ import authentication from './authentication.png'
 import blockchain from './blockchain.png'
 import crypto from './crypto-website.png'
 import dockerSS from './docker-ss.png'
-import zenpods from './zenpods.png'
-import tcr from './token-cache-redis.jpg'
+import microservice from './microservice.png'
+import rateLimit from './rate limit.png'
+import projectStructer from './project-structer.jpeg'
 
-
-import line from './line.png'
 
 export {
     css,
@@ -37,8 +36,8 @@ export {
     blockchain,
     crypto,
     dockerSS,
-    zenpods,
-    tcr,
     postgre,
-    line
+    microservice,
+    rateLimit,
+    projectStructer
 }

@@ -14,10 +14,10 @@ const Experience = () => {
                 </div>
                 <div className="lg:w-3/4 ml-6 lg:ml-0">
                   <h2 className="text-white text-lg font-bold"> {experience.title} </h2>
-                  <h3 className="text-gray-300 text-lg"> {experience.company} </h3>
+                  <h3 className="text-gray-300 text-lg font-semibold"> {experience.company} </h3>
                   {experience.details.map((detail,i) => (
                     <ul key={i} className="lg:list-disc lg:ml-6 lg:w-4/5">
-                      <li className="text-gray-300"> {detail} </li>
+                      <li className="text-gray-300 text-justify mt-2"> {detail} </li>
                     </ul>
                   ))}
                 </div>

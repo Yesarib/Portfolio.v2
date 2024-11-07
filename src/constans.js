@@ -1,4 +1,4 @@
-import { nodejs, reactjs, docker, javascript, typescript, mongodb, tailwind, git, netcore, css, html, zenpods, dockerSS, blockchain, authentication, crypto, tcr, postgre } from './assets/index'
+import { nodejs, reactjs, docker, javascript, typescript, mongodb, tailwind, git, netcore, css, html, dockerSS, blockchain, authentication, crypto, postgre, rateLimit, microservice, projectStructer } from './assets/index'
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa'
 import axios from 'axios'
 
@@ -103,40 +103,55 @@ export const links = [
 export const experiences = [
     {
         id: 1,
-        title: 'Taxi App Backend Service',
-        company: 'F&S Yazılım Bilişim',
-        technologies: ['Node.Js', 'Socket.io', 'Payment', 'MongoDB', 'React'],
-        date: '12/2023 - Current',
+        title: 'Full Stack Developer',
+        company: 'StarSoft',
+        technologies: ["Node.Js", "React", "Payment", "MongoDB", "PostgreSQL", "Docker", "Nginx"],
+        date: '02/2024 - 10/2024',
         details:
             [
-                "As a freelance developer, I successfully implemented the backend for a taxi application using Node.js. I integrated socket communication, payment systems, and API functionalities. I enhanced real-time communication, integrated secure payment systems, and developed user-friendly APIs to ensure seamless interaction with the mobile application",
-                "In addition to my backend expertise, I also work with React to create an efficient admin panel and have experience in developing static websites. This combination of skills allows me to provide end-to-end solutions, ensuring both robust functionality and an engaging user experience across various aspects of web development."
+                "Spearheaded the development of a large-scale real-time e-ticketing platform, optimizing system architecture for high performance and scalability. Leveraged Node.js and Express microservices, with Nginx for load balancing and RabbitMQ for asynchronous message processing.",
+                "Streamlined data management by integrating MongoDB and Redis, ensuring seamless deployment and management via Docker-based containerization.",
+                "Delivered a full-stack web solution for an e-commerce platform, employing Node.js for backend API development and React for a responsive frontend. Managed the entire project lifecycle, ensuring timely delivery and budget adherence."
             ]
     },
     {
         id: 2,
-        title: 'Intern Backend Developer',
+        title: 'Freelance - Full Stack Web Developer',
+        company: 'F&S Yazılım Bilişim',
+        technologies: ['Node.Js', 'Socket.io', 'Payment', 'MongoDB', 'React'],
+        date: '12/2023 - 04/2024',
+        details:
+            [
+                "Developed the backend architecture for a taxi service app, integrating real-time socket communication and payment systems using Node.js. Designed secure and efficient API structures to facilitate smooth interaction between the mobile app and server.",
+                "Built a React-based frontend with a focus on performance optimization and user experience, applying component-based architecture for scalability and maintainability."
+            ]
+    },
+    {
+        id: 3,
+        title: 'Backend Developer',
         company: 'Intellium',
         technologies: ['.NET Core', 'Restful API', 'PostgreSQL', 'React'],
         date: '10/2023 - 01/2024',
         details:
             [
-                "Worked on the Intellium Portal project using .NET Core in the backend to add new features to the company's existing technology infrastructure. My responsibilities included developing various new modules and functionalities to enhance the user experience and improve system performance. Within the scope of the project, I successfully managed steps such as analyzing feature requests, identifying technical requirements and creating appropriate solutions. I also performed regular code reviews to ensure the maintainability of the existing application and improve code quality."
+                "Contributed to the Intellium Portal project using .NET Core to enhance system functionality. Added new modules and features to boost user engagement and system efficiency.",
+                "Managed end-to-end feature implementation, including technical analysis, requirement gathering, and solution design, resulting in improved system performance and user satisfaction."
             ]
     },
     {
-        id: 3,
+        id: 4,
         title: 'Intern Software Engineer',
         company: 'Digital Transformation Office of the Presidency of the Republic of Turkey',
         technologies: ['Node.Js', 'Restful API', 'Socket.io', 'Blockchain', 'Solidity'],
         date: '07/2023 - 08/2023',
         details:
             [
-                "Using Node.js, I developed a blockchain system from scratch that includes two applications - a 'blockchain' and a 'miner' - that communicate through sockets and implement the Proof-of-Work (PoW) algorithm. I demonstrated hands-on experience in building and integrating blockchain components by establishing seamless communication between these applications."
+                "Developed a blockchain-based solution from the ground up using Node.js, building two key applications—‘blockchain’ and ‘miner’—with socket-based communication and Proof-of-Work (PoW) implementation.",
+                "Showcased strong expertise in blockchain technologies, demonstrating seamless integration and communication between distributed systems."
             ]
     },
     {
-        id: 4,
+        id: 5,
         title: 'Intern Software Engineer',
         company: 'Emeltek Biomedical R&D Consulting',
         technologies: ['Unity', 'C#'],
@@ -161,43 +176,49 @@ const getProjectByName = async (projectName) => {
 }
 
 export const getProjectsArray = async () => {
-    const ZenPods = await getProjectByName('ZenPods')
+    const NodejsProjectStructer = await getProjectByName("nodejs-project-structer")
     const Blockchain = await getProjectByName('Blockchain')
     const BasicMicroserviceECommerce = await getProjectByName('Basic-Microservice-E-Commerce')
+    const NestBasicMicroservice = await getProjectByName('nest-basic-microservice')
+    const NestjsRateLimitLoggerService = await getProjectByName('nestjs-rate-limit-logger-service') 
     const Authentication = await getProjectByName('Authentication')
     const Crypto = await getProjectByName('Crypto-Website-Project')
-    const MovieApp = await getProjectByName("MovieApp-Token-Cache-Redis")
 
     return [
+        {
+            id: Blockchain?.id,
+            project_detail: Blockchain,
+            project_image: blockchain
+        },
         {
             id: BasicMicroserviceECommerce?.id,
             project_detail: BasicMicroserviceECommerce,
             project_image: dockerSS
         },
         {
-            id: ZenPods.id,
-            project_detail: ZenPods,
-            project_image: zenpods
+            id: NodejsProjectStructer?.id,
+            project_detail: NodejsProjectStructer,
+            project_image: projectStructer
         },
         {
-            id: Blockchain.id,
-            project_detail: Blockchain,
-            project_image: blockchain
+            id: NestBasicMicroservice?.id,
+            project_detail: NestBasicMicroservice,
+            project_image: microservice
         },
         {
-            id: Authentication.id,
+            id: NestjsRateLimitLoggerService?.id,
+            project_detail: NestjsRateLimitLoggerService,
+            project_image: rateLimit
+        },
+        {
+            id: Authentication?.id,
             project_detail: Authentication,
             project_image: authentication
         },
         {
-            id: Crypto.id,
+            id: Crypto?.id,
             project_detail: Crypto,
             project_image: crypto
-        },
-        {
-            id: MovieApp.id,
-            project_detail: MovieApp,
-            project_image: tcr
         },
     ]
 }
